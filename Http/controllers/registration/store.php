@@ -1,4 +1,5 @@
 <?php
+use Core\Authenticator;
 use Core\App;
 use Core\Database;
 use Core\Validator;
@@ -42,7 +43,7 @@ if ($user) {
     ]);
 
     // Mark that the user has logged in
-    login([
+    (new Authenticator)->login([
         'email' => $email
     ]);
 
